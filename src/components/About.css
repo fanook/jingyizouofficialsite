@@ -1,0 +1,355 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #12121e 0%, #101a2e 50%, #0a0a1a 100%);
+  --secondary-gradient: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  --accent-gradient: linear-gradient(45deg, #d4af37, #f0e68c); /* 金色渐变 */
+  --piano-gold: #d4af37; /* 统一的金色 */
+  --piano-black: #0a0a1a; /* 统一的深色 */
+}
+
+.about-section {
+  min-height: 100vh;
+  padding: 120px 2rem 2rem;
+  background: var(--primary-gradient);
+  color: white;
+  overflow: hidden; /* 防止浮动音符溢出 */
+}
+
+.about-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-section .section-title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--piano-gold);
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.about-section .section-subtitle {
+  font-size: 1.3rem;
+  color: #cccccc;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.about-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  background: rgba(42, 42, 42, 0.3);
+  padding: 0.5rem;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  color: #cccccc;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 0.25rem;
+  outline: none; /* 移除焦点轮廓 */
+}
+
+.tab-button:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-button.active {
+  background: var(--accent-gradient);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.tab-button:focus-visible { /* 键盘导航时的焦点样式 */
+  outline: 2px solid var(--piano-gold);
+  outline-offset: 2px;
+}
+
+
+.tab-content {
+  min-height: 500px; /* 确保内容区域有最小高度 */
+}
+
+/* Story Content & Grid */
+.story-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* 文本占2份，图片占1份 */
+  gap: 3rem;
+  align-items: flex-start; /* 让内容顶部对齐 */
+}
+
+.story-text h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--piano-gold);
+}
+
+.story-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+}
+
+/* --- 图片容器样式 (用于放置单张图片) --- */
+.story-image {
+  display: flex;
+  justify-content: center; /* 居中图片 */
+  align-items: center;
+  /* 移除 max-width，让图片可以更灵活地占据 grid 区域 */
+  width: 100%; /* 确保它填满 grid 分配给它的空间 */
+  height: auto; /* 高度由图片内容决定，或由图片自身样式决定 */
+}
+
+/* --- 单张图片样式 --- */
+.about-main-image {
+  width: 100%; /* 图片宽度填充其父容器 (.story-image) */
+  height: auto; /* **保持图片原始比例，高度自适应** */
+  max-height: 400px; /* 可以设置最大高度，防止图片过高 */
+  object-fit: contain; /* 确保图片完整显示，不裁剪，可能会有留白 */
+  object-position: center;
+  border-radius: 12px; /* 柔和的圆角 */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.45); /* 明显阴影，使图片浮起 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 添加过渡效果 */
+}
+
+.about-main-image:hover {
+  transform: translateY(-5px); /* 鼠标悬停时图片轻微上浮 */
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55); /* 阴影更明显 */
+}
+
+
+/* --- 旧的 image-placeholder 和 grid 样式（已删除） --- */
+/* 如果你之前有其他关于 .image-grid-container 或 .image-grid-item 的样式，
+   它们现在应该被删除，因为 JSX 中已经不再使用这些结构。
+   这里只保留你文件中原始的 music-note 和 story-image p 样式，
+   但如果 JSX 中不再使用 image-placeholder，这些也可以删除。
+*/
+/*
+.music-note {
+  font-size: 4rem;
+  color: var(--piano-gold);
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.story-image p {
+  color: #888;
+  font-size: 0.9rem;
+  text-align: center;
+  font-style: italic;
+}
+*/
+
+/* Philosophy Content (保留你的原有样式) */
+.philosophy-grid { /* 这个在你的 JSX 里没有用到，而是沿用了 story-grid，如果你需要单独的布局，再启用 */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.philosophy-card {
+  background: var(--secondary-gradient);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.philosophy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.philosophy-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--piano-gold);
+}
+
+.philosophy-card p {
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+/* Achievements Content (保留你的原有样式) */
+.achievements-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: var(--accent-gradient);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  background: var(--piano-gold);
+  border-radius: 50%;
+  border: 3px solid var(--piano-black);
+  z-index: 2;
+}
+
+.timeline-year {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--piano-gold);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-title {
+  font-size: 1.1rem;
+  color: white;
+  margin: 0;
+  font-weight: 400;
+}
+
+.skills-section h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--piano-gold);
+  text-align: center;
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-item {
+  margin-bottom: 1rem;
+}
+
+.skill-item span {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: white;
+  font-weight: 500;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: var(--accent-gradient);
+  border-radius: 4px;
+  transition: width 1.5s ease-in-out;
+  animation: fillAnimation 2s ease-in-out;
+}
+
+@keyframes fillAnimation {
+  from { width: 0%; }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .about-tabs {
+    flex-direction: column;
+    border-radius: 15px;
+  }
+
+  .tab-button {
+    margin: 0.25rem 0;
+    border-radius: 10px;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr; /* 移动端单列布局 */
+    gap: 2rem;
+  }
+
+  /* 移动端单张图片样式 */
+  .about-main-image {
+    max-height: 300px; /* 移动端图片最大高度限制 */
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+  }
+
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .achievements-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .timeline {
+    padding-left: 1.5rem;
+  }
+
+  .timeline::before {
+    left: 0.75rem;
+  }
+
+  .timeline-dot {
+    left: -1.5rem;
+  }
+}

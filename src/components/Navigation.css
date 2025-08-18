@@ -1,0 +1,131 @@
+/* 解决点击时出现的默认浏览器焦点轮廓 */
+.piano-key:focus {
+  outline: none;
+  border: none; /* 再次确保没有边框 */
+  box-shadow: none; /* 再次确保没有阴影 */
+}
+
+/* 对于一些浏览器，可能还需要针对 :focus-visible 来处理，确保可访问性 */
+.piano-key:focus-visible {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  /* 如果你完全移除了焦点轮廓，请确保在 .piano-key:focus-visible 中为键盘用户提供清晰的视觉指示 */
+  /* 例如：可以考虑让 .key-label 变色或加粗，与 :hover 状态保持一致 */
+  .key-label {
+    color: #d4af37; /* 键盘选中时也变为金色 */
+  }
+}
+
+/* 现有代码保持不变，以下为完整代码以供参考 */
+/* --- 现有代码 --- */
+.piano-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(40, 40, 40, 0.8);
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  height: 70px;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.05);
+}
+
+.piano-brand h1 {
+  color: #ffffff;
+  font-size: 1.7rem;
+  font-weight: 300;
+  margin: 0;
+  letter-spacing: 1.5px;
+  font-family: 'Georgia', serif;
+}
+
+.piano-brand p {
+  color: #bbbbbb;
+  font-size: 0.8rem;
+  margin: 0;
+  font-weight: 200;
+  letter-spacing: 0.8px;
+}
+
+.piano-keys {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 50px;
+}
+
+.piano-key {
+  position: relative;
+  border: none; /* 确保默认无边框 */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Arial', sans-serif;
+  font-weight: 500;
+  outline: none; /* 确保默认无 outline */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.key-label {
+  color: #f0f0f0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+/* --- 悬停 (Hover) 状态 --- */
+.piano-key:hover .key-label {
+  color: #d4af37;
+}
+
+/* --- 激活 (Active) 状态 --- */
+.piano-key.active {
+  transform: translateY(1px); /* 激活时轻微下沉 */
+  box-shadow: none;
+  border: none; /* 确保激活时无边框 */
+}
+
+.piano-key.active .key-label {
+  color: #d4af37;
+  font-weight: 600;
+}
+
+/* 响应式设计：小屏幕适配 */
+@media (max-width: 768px) {
+  .piano-navigation {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+
+  .piano-brand h1 {
+    font-size: 1.4rem;
+  }
+
+  .piano-keys {
+    height: auto;
+    gap: 15px;
+  }
+
+  .piano-key {
+    padding: 6px 0;
+  }
+
+  .key-label {
+    font-size: 0.8rem;
+  }
+}
