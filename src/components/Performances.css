@@ -1,0 +1,245 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+  --secondary-gradient: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  --piano-white-gradient: linear-gradient(45deg, #ffffff, #e0e0e0);
+  --piano-black: #0a0a1a;
+}
+
+.performances-section {
+  min-height: 100vh;
+  padding: 120px 2rem 4rem;
+  background: var(--primary-gradient);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.performances-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.performances-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.performances-section .section-title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  background: var(--piano-white-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.performances-section .section-subtitle {
+  font-size: 1.3rem;
+  color: #cccccc;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.performances-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.performance-card {
+  background: var(--secondary-gradient);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px; /* 确保卡片最小高度 */
+}
+
+.performance-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.performance-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #333, #222);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.performance-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.performance-card:hover .performance-image img {
+  transform: scale(1.05);
+}
+
+.performance-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px; /* 确保最小高度 */
+  flex-grow: 1; /* 让内容区域占满剩余空间 */
+}
+
+.performance-header {
+  flex-shrink: 0; /* 标题区域不收缩 */
+}
+
+.performance-body {
+  flex-grow: 1; /* 内容区域占据中间的剩余空间 */
+  display: flex;
+  align-items: flex-start; /* 内容从顶部开始 */
+}
+
+.performance-footer {
+  flex-shrink: 0; /* 底部区域不收缩 */
+  margin-top: auto; /* 推到底部 */
+}
+
+.performance-placeholder {
+  min-height: 40px; /* 占位区域的最小高度 */
+  flex-grow: 1;
+}
+
+/* 没有图片时，占位区域高度更小 */
+.performance-card:not(:has(.performance-image)) .performance-placeholder {
+  min-height: 20px;
+}
+
+/* 没有图片也没有链接时，进一步减小高度 */
+.performance-card:not(:has(.performance-image)):not(:has(.performance-link)) {
+  min-height: 240px;
+}
+
+.performance-card:not(:has(.performance-image)):not(:has(.performance-link)) .performance-content {
+  min-height: 160px;
+}
+
+.performance-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  background: var(--piano-white-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+.performance-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cccccc;
+  margin: 0; /* 移除margin，由父容器控制间距 */
+  font-weight: 300;
+  width: 100%;
+}
+
+.performance-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.performance-link:hover {
+  color: #cccccc;
+  border-bottom-color: #cccccc;
+  transform: translateX(5px);
+}
+
+.performance-link svg {
+  transition: transform 0.3s ease;
+}
+
+.performance-link:hover svg {
+  transform: translateX(3px) translateY(-3px);
+}
+
+/* 当没有图片时的样式 */
+.performance-card:not(:has(.performance-image)) {
+  min-height: 280px; /* 没有图片时使用更小的高度 */
+}
+
+.performance-card:not(:has(.performance-image)) .performance-content {
+  padding: 2.5rem;
+  min-height: 200px; /* 调整内容区域的最小高度 */
+}
+
+/* 当没有描述时的样式 */
+.performance-card:not(:has(.performance-description)) .performance-title {
+  margin-bottom: 1.5rem;
+}
+
+/* 当没有链接时的样式 */
+.performance-card:not(:has(.performance-link)) .performance-description {
+  margin-bottom: 0;
+}
+
+/* Mobile 响应式设计 */
+@media (max-width: 768px) {
+  .performances-section {
+    padding: 100px 1rem 2rem;
+  }
+
+  .performances-section .section-title {
+    font-size: 2.5rem;
+  }
+
+  .performances-section .section-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .performances-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .performance-content {
+    padding: 1.5rem;
+  }
+
+  .performance-title {
+    font-size: 1.3rem;
+  }
+
+  .performance-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .performances-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .performances-container {
+    max-width: 100%;
+  }
+}

@@ -7,7 +7,8 @@ const Navigation = ({ currentSection, onNavigate }) => {
   const navItems = [
     // { id: 'home', label: '首页', isBlack: false },
     { id: 'about', label: 'About', isBlack: true },
-    { id: 'portfolio', label: 'Portfolio', isBlack: false },
+    { id: 'performances', label: 'Performances', isBlack: false },
+    { id: 'portfolio', label: 'Portfolio', isBlack: true },
     { id: 'contact', label: 'Contact', isBlack: false }
   ]
 

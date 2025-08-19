@@ -3,13 +3,13 @@ import './Contact.css'
 
 // 联系方式常量配置 - 方便修改
 const CONTACT_INFO = {
-  EMAIL: 'jingyizou@email.com',
+  EMAIL: 'zoujingyijane@gmail.com',
   XIAOHONGSHU: '@jingyizou_piano',
-  XIAOHONGSHU_LINK: 'https://www.xiaohongshu.com/user/profile/jingyizou_piano',
-  YOUTUBE: 'youtube.com/@jingyizoupiano',
-  YOUTUBE_LINK: 'https://www.youtube.com/@jingyizoupiano',
+  XIAOHONGSHU_LINK: 'https://www.xiaohongshu.com/user/profile/6870d308000000001e008a66?xsec_token=YBS9dsKrp0rTVIvpzEPb5zwByFlCGeVnYH2CopkCAbnvw=&xsec_source=app_share&xhsshare=CopyLink&appuid=6870d308000000001e008a66&apptime=1755591668&share_id=bb2a23441e314f23b586ae8a6469b337',
+  YOUTUBE: 'youtube.com/@jingyizou6086',
+  YOUTUBE_LINK: 'https://www.youtube.com/@jingyizou6086',
   INSTAGRAM: '@jingyizou.piano',
-  INSTAGRAM_LINK: 'https://www.instagram.com/jingyizou.piano'
+  INSTAGRAM_LINK: 'https://www.instagram.com/jingyizou_piano_/profilecard/?igsh=MXBzbzVuOGNnYTlnag=='
 }
 
 const Contact = () => {
@@ -79,7 +79,10 @@ const Contact = () => {
   const [activeContact, setActiveContact] = useState(null);
 
   const handleIconClick = (platformId, link) => {
-    if (link) {
+    if (platformId === 'email') {
+      // 邮箱直接打开邮件客户端，不切换显示状态
+      window.location.href = `mailto:${CONTACT_INFO.EMAIL}`;
+    } else if (link) {
       window.open(link, '_blank');
     } else {
       setActiveContact(platformId === activeContact ? null : platformId);
@@ -98,12 +101,16 @@ const Contact = () => {
             {contactPlatforms.map((platform) => (
                 <div
                     key={platform.id}
-                    className={`platform-card ${activeContact === platform.id ? 'active' : ''}`}
+                    className={`platform-card ${platform.id === 'email' ? 'email-card' : ''} ${activeContact === platform.id ? 'active' : ''}`}
                     onClick={() => handleIconClick(platform.id, platform.link)}
                 >
                   <div className="platform-icon">{platform.icon}</div>
                   <h3 className="platform-title">{platform.title}</h3>
-                  {activeContact === platform.id && (
+                  {platform.id === 'email' ? (
+                    <div className="email-hover-details">
+                      <p className="platform-value">{platform.value}</p>
+                    </div>
+                  ) : activeContact === platform.id && (
                       <div className="platform-details">
                         <p className="platform-value">{platform.value}</p>
                         {/* <p className="platform-description">{platform.description}</p> */}

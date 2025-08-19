@@ -3,6 +3,7 @@ import './App.css'
 import Navigation from './components/Navigation'
 import Home from './components/Home'
 import About from './components/About'
+import Performances from './components/Performances'
 import Portfolio from './components/Portfolio'
 import Contact from './components/Contact'
 
@@ -23,7 +24,7 @@ function App() {
 
   // Handle scroll spy - detect which section is currently visible
   useEffect(() => {
-    const sections = ['home', 'about', 'performance', 'contact']
+    const sections = ['home', 'about', 'performances', 'portfolio', 'contact']
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -69,6 +70,9 @@ function App() {
         </section>
         <section id="about">
           <About />
+        </section>
+        <section id="performances">
+          <Performances />
         </section>
         <section id="portfolio">
           <Portfolio />

@@ -1,8 +1,8 @@
 :root {
   --primary-gradient: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
   --secondary-gradient: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-  --accent-gradient: linear-gradient(45deg, #10b981, #34d399); /* 翡翠绿渐变 */
-  --piano-green: #10b981; /* 翡翠绿 */
+  --accent-gradient: linear-gradient(45deg, #ffffff, #e0e0e0); /* 白色渐变 */
+  --piano-white-gradient: linear-gradient(45deg, #ffffff, #e0e0e0); /* 白色渐变效果 */
   --piano-black: #0a0a1a; /* 统一的深色 */
 }
 
@@ -14,7 +14,7 @@
 }
 
 .portfolio-section .container {
-  max-width: 1400px; /* 扩大容器以容纳更大的视频 */
+  max-width: 1600px; /* 进一步扩大容器宽度 */
   margin: 0 auto;
 }
 
@@ -26,9 +26,12 @@
 .portfolio-section .section-title {
   font-size: 3.5rem;
   margin-bottom: 1rem;
-  color: var(--piano-green);
+  background: var(--piano-white-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 300;
   letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .portfolio-section .section-subtitle {
@@ -42,11 +45,12 @@
 .video-grid {
   margin-top: 4rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 固定3列 */
-  gap: 2rem;
-  max-width: 1400px;
+  grid-template-columns: repeat(2, 1fr); /* 改为2列布局 */
+  gap: 3rem; /* 增大间距让布局更空旷 */
+  max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 2rem; /* 添加左右内边距 */
 }
 
 .video-item {
@@ -87,11 +91,12 @@
 }
 
 /* Mobile Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
   .video-grid {
-    grid-template-columns: repeat(2, 1fr); /* 中等屏幕显示2列 */
-    gap: 1.5rem;
-    max-width: 95%;
+    grid-template-columns: 1fr; /* 中等屏幕改为1列 */
+    gap: 2rem;
+    max-width: 90%;
+    padding: 0 1rem;
   }
 
   .video-item {

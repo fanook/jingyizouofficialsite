@@ -11,7 +11,7 @@ const About = () => {
   return (
     <section className="about-section">
       <div className="about-header">
-        <h2 className="section-title">About Me</h2>
+        <h2 className="section-title">About</h2>
         <p className="section-subtitle">Discover My Musical Journey</p>
       </div>
 
@@ -22,13 +22,11 @@ const About = () => {
             <div className="scrollable-text">
               <div className="text-content">
                 <h3>Musical Journey</h3>
-                <p>Jingyi Zou is currently pursuing her undergraduate studies in piano performance at the Manhattan School of Music, where she studies with Alexandre Moutouzkine, Co-Chair of the Piano Department. She was admitted to the Precollege Division in May 2021 and entered the undergraduate program in August 2023 with a full-tuition scholarship, the school's highest merit-based award.</p>
+                <p>Jingyi Zou is a pianist currently studying at the Manhattan School of Music in New York under the guidance of renowned pianist Alexandre Moutouzkine, where she holds a full scholarship.</p>
 
-                <p>Born in 2004, Zou began studying piano at the age of four and has won numerous first prizes in major competitions, including First Prize in the "Chinese Repertoire" category at the Hong Kong International Piano Invitation Competition.</p>
+                <p>A prizewinner at the Hong Kong International Piano Invitational Competition, she has studied with the distinguished pedagogue Solomon Mikowsky, as well as Dan Zhaoyi, Qiu Yinghong, Zheng Hui, Tang Zhenhua, and Marc Silverman.</p>
 
-                <p>She has previously studied with renowned educators including Dan Zhaoyi, conductor Yinghong Qiu, pianist Hui Zheng, improvisational artist Zhenhua Tang, and Marc Silverman of the Manhattan School of Music. She has also participated in masterclasses with distinguished pianists such as: Yin Chengzong, Antonio di Cristofano, Chongli Cai, Fang Yuan.</p>
-
-                <p>Through these experiences, she has developed a distinctive artistic voice shaped by diverse musical traditions.</p>
+                <p>She has also been inspired by masterclasses with Yin Chengzong, Cai Chongli, Yuan Fang, and Antonio di Cristofano, developing a distinctive artistic voice shaped by diverse musical traditions.</p>
               </div>
             </div>
           </div>
@@ -45,13 +43,13 @@ const About = () => {
             <div className="scrollable-text">
               <div className="text-content">
                 <h3>Performance Experience</h3>
-                <p>Zou has appeared with leading orchestras including the Hong Kong Philharmonic Orchestra, the Tianjin Conservatory Youth Symphony Orchestra, and the Neue Philharmonie München. She has given successful solo recitals in 2018 and 2023. In January 2025, she performed Grieg's Piano Concerto in A minor with the Neue Philharmonie München at the Zhongshan Culture and Art Center Grand Theatre, and later that month joined conductor Fuad Ibrahimov and the orchestra for two New Year concerts at the Shenzhen Concert Hall.</p>
+                <p>Zou has appeared as a soloist with the Hong Kong Philharmonic Orchestra and the Neue Philharmonie München, and has given acclaimed recitals at Munich's Herkulessaal, Hamburg's Laeiszhalle, and Carnegie Hall in New York.</p>
 
-                <p>Maestro Ibrahimov praised her, stating: "She is indeed an outstanding young pianist with a bright future." Her performances have been characterized by technical excellence and deep musical understanding, earning recognition from critics and audiences alike.</p>
+                <p>She performed Grieg's Piano Concerto in A minor with the Neue Philharmonie München at Zhongshan Cultural & Arts Center Grand Theatre, and together with conductor Fuad Ibrahimov, she presented two New Year's concerts with the orchestra at Shenzhen Concert Hall.</p>
 
-                <p>Her upcoming engagements include a German concert tour in September 2025, with performances in Sillian, Latzhausen, and Munich. In October 2025, she will perform Beethoven's Piano Concerto No. 1 in C Major with conductor Ulrich Windfuhr at the Reiss Concert Hall in Hamburg. In December 2025, she will appear at the Stiftung Mozarteum – Großer Saal in Salzburg with the Salzburg Chamber Soloists, performing Mozart's Piano Concerto No. 20 in D minor.</p>
+                <p>Conductor Ulrich Windfuhr praised her as "a pianist with a solid foundation and rich musical imagination," while conductor Fuad Ibrahimov described her as "a truly outstanding young pianist with a brilliant future."</p>
 
-                <p>Notably, Jingyi Zou is the first Chinese pianist to give solo recitals at both the Herkulessaal in the Munich Residenz and the Reiss Concert Hall in Hamburg, marking significant milestones in her international career.</p>
+                <p>Her performances have been characterized by technical excellence and deep musical understanding, earning recognition from critics and audiences in prestigious venues worldwide.</p>
               </div>
             </div>
           </div>

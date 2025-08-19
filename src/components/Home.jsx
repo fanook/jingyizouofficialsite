@@ -53,7 +53,6 @@ const Home = () => {
 
             <div className="animated-welcome">
               <p className="welcome-text">{animatedText}</p>
-              <div className="cursor" />
             </div>
 
             <div className={`welcome-content ${showWelcome ? 'show' : ''}`}>

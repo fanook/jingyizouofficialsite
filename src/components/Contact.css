@@ -1,8 +1,8 @@
 :root {
   --primary-gradient: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
   --secondary-gradient: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-  --accent-gradient: linear-gradient(45deg, #10b981, #34d399); /* 翡翠绿渐变 */
-  --piano-green: #10b981; /* 翡翠绿 */
+  --accent-gradient: linear-gradient(45deg, #ffffff, #e0e0e0); /* 白色渐变 */
+  --piano-white-gradient: linear-gradient(45deg, #ffffff, #e0e0e0); /* 白色渐变效果 */
   --piano-black: #0a0a1a; /* 统一的深色 */
 }
 
@@ -30,9 +30,12 @@
 .contact-section .section-title {
   font-size: 3.5rem;
   margin-bottom: 1rem;
-  color: var(--piano-green);
+  background: var(--piano-white-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 300;
   letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .contact-section .section-subtitle {
@@ -57,7 +60,7 @@
   padding: 1rem;
   border-radius: 10px;
   text-align: center;
-  border: 1px solid rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
   flex: 0 0 auto;
@@ -73,15 +76,15 @@
 
 .platform-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(16, 185, 129, 0.3);
+  border-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-  background: rgba(16, 185, 129, 0.05);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .platform-card.active {
-  background: rgba(16, 185, 129, 0.1);
-  border-color: var(--piano-green);
-  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
   transform: translateY(-5px);
 }
 
@@ -97,7 +100,8 @@
 
 .platform-card:hover .platform-icon {
   transform: scale(1.1); /* 悬停时图标放大 */
-  color: var(--piano-green);
+  color: #ffffff;
+  filter: brightness(1.2) drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
 }
 
 .platform-title {
@@ -131,19 +135,59 @@
   pointer-events: none; /* 默认不响应鼠标事件 */
 }
 
+/* 邮箱悬浮显示样式 */
+.email-hover-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
 .platform-card.active .platform-details {
   opacity: 1;
   transform: scale(1); /* 激活时放大到原始大小 */
   pointer-events: auto; /* 激活时响应鼠标事件 */
 }
 
+/* 邮箱卡片悬浮时显示邮箱地址 */
+.email-card:hover .email-hover-details {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* 邮箱卡片的特殊样式 */
+.email-card .platform-value {
+  font-size: 1rem; /* 稍微小一点，避免换行 */
+  word-break: break-word; /* 更自然的换行方式 */
+  hyphens: auto; /* 自动连字符 */
+  line-height: 1.2;
+}
+
 .platform-value {
   font-size: 1.2rem; /* 值字体更大 */
-  color: var(--piano-green);
+  background: var(--piano-white-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 600;
   margin-bottom: 0.5rem;
   word-break: break-all;
   text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .platform-description {
