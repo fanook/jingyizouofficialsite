@@ -14,12 +14,33 @@
   right: 0;
   bottom: 0;
   z-index: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.home-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    transparent 30%, 
+    rgba(0, 0, 0, 0.2) 60%, 
+    rgba(0, 0, 0, 0.4) 80%, 
+    rgba(0, 0, 0, 0.6) 100%);
+  z-index: 1;
 }
 
 .floating-notes {
   position: absolute;
   width: 100%;
   height: 100%;
+  z-index: 2;
 }
 
 .note {
@@ -48,7 +69,7 @@
 
 .home-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
@@ -58,16 +79,18 @@
 }
 
 .hero-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
   max-width: 1200px;
   width: 100%;
+  padding-right: 2rem;
 }
 
 .hero-text {
   text-align: left;
+  padding: 3rem;
+  max-width: 500px;
 }
 
 .main-title {
@@ -84,6 +107,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: 'Georgia', serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .title-subtitle {
@@ -93,6 +117,7 @@
   color: #cccccc;
   letter-spacing: 2px;
   margin-left: 0.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .animated-welcome {
@@ -106,6 +131,7 @@
   color: #f0f0f0;
   margin: 0;
   font-family: 'Georgia', serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .cursor {
@@ -139,6 +165,7 @@
   color: #cccccc;
   margin: 2rem 0;
   font-weight: 300;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .hero-stats {
@@ -164,6 +191,26 @@
   font-size: 0.9rem;
   color: #aaaaaa;
   letter-spacing: 1px;
+}
+
+.upcoming-performances {
+  margin: 3rem 0;
+}
+
+.performances-link {
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px solid #ffffff;
+  font-weight: 400;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  padding-bottom: 2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.performances-link:hover {
+  color: #cccccc;
+  border-bottom-color: #cccccc;
 }
 
 .hero-image {
@@ -280,9 +327,13 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: center;
+    justify-content: center;
+    padding-right: 1rem;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    padding: 2rem;
   }
 
   .title-line {
@@ -293,16 +344,7 @@
     font-size: 1.3rem;
   }
 
-  .hero-stats {
-    gap: 1.5rem;
-  }
-
-  .stat-number {
-    font-size: 2rem;
-  }
-
-  .image-placeholder {
-    width: 300px;
-    height: 400px;
+  .performances-link {
+    font-size: 0.9rem;
   }
 }

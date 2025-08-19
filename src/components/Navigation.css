@@ -13,7 +13,7 @@
   /* 如果你完全移除了焦点轮廓，请确保在 .piano-key:focus-visible 中为键盘用户提供清晰的视觉指示 */
   /* 例如：可以考虑让 .key-label 变色或加粗，与 :hover 状态保持一致 */
   .key-label {
-    color: #d4af37; /* 键盘选中时也变为金色 */
+    color: #10b981; /* 键盘选中时也变为绿色 */
   }
 }
 
@@ -33,7 +33,7 @@
   z-index: 9999;
   height: 70px;
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.05);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.05);
 }
 
 .piano-brand h1 {
@@ -88,7 +88,7 @@
 
 /* --- 悬停 (Hover) 状态 --- */
 .piano-key:hover .key-label {
-  color: #d4af37;
+  color: #10b981;
 }
 
 /* --- 激活 (Active) 状态 --- */
@@ -99,7 +99,7 @@
 }
 
 .piano-key.active .key-label {
-  color: #d4af37;
+  color: #10b981;
   font-weight: 600;
 }
 

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './Portfolio.css'
 
 const Portfolio = () => {
@@ -14,26 +13,26 @@ const Portfolio = () => {
       <section className="portfolio-section">
         <div className="container">
           <div className="portfolio-header">
-            <h2 className="section-title">作品展示</h2>
-            <p className="section-subtitle">聆听我的音乐世界</p>
+            <h2 className="section-title">Portfolio</h2>
+            <p className="section-subtitle">Listen to My Musical World</p>
           </div>
 
-          {/* 新增的 YouTube 视频播放器容器 */}
-          <div className="youtube-videos-container">
+          {/* 视频网格 */}
+          <div className="video-grid">
             {youtubeVideoIds.map((videoId, index) => (
-                <div key={index} className="youtube-video-item">
+              <div key={index} className="video-item">
+                <div className="video-wrapper">
                   <iframe
-                      src={`https://www.youtube.com/embed/${videoId}`}
-                      title={`YouTube video player ${index + 1}`}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
+                    src={`https://www.youtube.com/embed/${videoId}`}
+                    title={`YouTube video player ${index + 1}`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
                   ></iframe>
                 </div>
+              </div>
             ))}
           </div>
-
-          {/* 以前的其他内容（分类筛选、作品网格、统计数据、CTA）已移除 */}
 
         </div>
       </section>

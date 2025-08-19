@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import './Home.css'
-import hero1Image from '../assets/images/hero1.jpg' // 确保你有一张合适的图片放在这个路径下
+import hero2Image from '../assets/images/hero2.jpg'
 
 const Home = () => {
   const [animatedText, setAnimatedText] = useState('')
   const [showWelcome, setShowWelcome] = useState(false)
 
-  const welcomeText = '欢迎来到我的音乐世界'
+  const welcomeText = 'Welcome to My Musical World'
 
   useEffect(() => {
     let index = 0
@@ -25,7 +25,7 @@ const Home = () => {
 
   return (
     <section className="home-section">
-      <div className="home-background">
+      <div className="home-background" style={{ backgroundImage: `url(${hero2Image})` }}>
         <div className="floating-notes">
           {[...Array(20)].map((_, i) => (
             <div
@@ -47,8 +47,8 @@ const Home = () => {
         <div className="hero-section">
           <div className="hero-text">
             <h1 className="main-title">
-              <span className="title-line">邹静怡</span>
-              <span className="title-subtitle">钢琴演奏家</span>
+              <span className="title-line">Jingyi Zou</span>
+              <span className="title-subtitle">Pianist</span>
             </h1>
 
             <div className="animated-welcome">
@@ -58,35 +58,23 @@ const Home = () => {
 
             <div className={`welcome-content ${showWelcome ? 'show' : ''}`}>
               <p className="hero-description">
-                用指尖诠释音乐的灵魂，让每一个音符都承载着情感与故事。
-                从古典到现代，从独奏到协奏，我致力于为每一场演出带来独特的艺术体验。
+                Interpreting the soul of music through fingertips, letting every note carry emotion and story.
+                From classical to contemporary, from solo to concerto, I am dedicated to bringing a unique artistic experience to every performance.
               </p>
 
-              <div className="hero-stats">
-                <div className="stat">
-                  <span className="stat-number">20+</span>
-                  <span className="stat-label">年演奏经验</span>
-                </div>
-                {/*<div className="stat">*/}
-                {/*  <span className="stat-number">50+</span>*/}
-                {/*  <span className="stat-label">场音乐会</span>*/}
-                {/*</div>*/}
-                <div className="stat">
-                  <span className="stat-number">∞</span>
-                  <span className="stat-label">对音乐的热爱</span>
-                </div>
+              <div className="upcoming-performances">
+                <a href="https://www.elbphilharmonie.de/en/whats-on/beethoven-orchester-hamburg-zou-jingyi-ulrich-windfuhr/24348" className="performances-link">
+                  Upcoming Performances
+                </a>
               </div>
             </div>
           </div>
 
-          <div className="hero-image">
-            <img src={hero1Image} alt="专业钢琴演奏照片" className="hero-section-img" />
-          </div>
         </div>
 
         <div className="scroll-indicator">
           <div className="scroll-arrow">↓</div>
-          <p>探索我的音乐之旅</p>
+          <p>Explore My Musical Journey</p>
         </div>
       </div>
     </section>

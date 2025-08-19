@@ -1,8 +1,8 @@
 :root {
-  --primary-gradient: linear-gradient(135deg, #12121e 0%, #101a2e 50%, #0a0a1a 100%);
+  --primary-gradient: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
   --secondary-gradient: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-  --accent-gradient: linear-gradient(45deg, #d4af37, #f0e68c); /* 金色渐变 */
-  --piano-gold: #d4af37; /* 统一的金色 */
+  --accent-gradient: linear-gradient(45deg, #10b981, #34d399); /* 翡翠绿渐变 */
+  --piano-green: #10b981; /* 翡翠绿 */
   --piano-black: #0a0a1a; /* 统一的深色 */
 }
 
@@ -30,7 +30,7 @@
 .contact-section .section-title {
   font-size: 3.5rem;
   margin-bottom: 1rem;
-  color: var(--piano-gold);
+  color: var(--piano-green);
   font-weight: 300;
   letter-spacing: 2px;
 }
@@ -56,7 +56,7 @@
   padding: 2rem;
   border-radius: 15px;
   text-align: center;
-  border: 1px solid rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
   flex: 0 0 auto;
@@ -72,27 +72,31 @@
 
 .platform-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(212, 175, 55, 0.3);
+  border-color: rgba(16, 185, 129, 0.3);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-  background: rgba(212, 175, 55, 0.05);
+  background: rgba(16, 185, 129, 0.05);
 }
 
 .platform-card.active {
-  background: rgba(212, 175, 55, 0.1);
-  border-color: var(--piano-gold);
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+  background: rgba(16, 185, 129, 0.1);
+  border-color: var(--piano-green);
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
   transform: translateY(-5px);
 }
 
 .platform-icon {
   font-size: 4rem; /* 图标更大，更突出 */
   margin-bottom: 0.5rem; /* 减小与标题的间距 */
-  color: var(--piano-gold);
+  color: #ffffff;
   transition: transform 0.3s ease; /* 添加动画 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .platform-card:hover .platform-icon {
   transform: scale(1.1); /* 悬停时图标放大 */
+  color: var(--piano-green);
 }
 
 .platform-title {
@@ -132,7 +136,7 @@
 
 .platform-value {
   font-size: 1.2rem; /* 值字体更大 */
-  color: var(--piano-gold);
+  color: var(--piano-green);
   font-weight: 600;
   margin-bottom: 0.5rem;
   word-break: break-all;

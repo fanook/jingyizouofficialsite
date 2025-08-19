@@ -6,9 +6,9 @@ const Navigation = ({ currentSection, onNavigate }) => {
 
   const navItems = [
     // { id: 'home', label: '首页', isBlack: false },
-    { id: 'about', label: '关于我', isBlack: true },
-    { id: 'portfolio', label: '作品展示', isBlack: false },
-    { id: 'contact', label: '联系我', isBlack: false }
+    { id: 'about', label: 'About', isBlack: true },
+    { id: 'portfolio', label: 'Portfolio', isBlack: false },
+    { id: 'contact', label: 'Contact', isBlack: false }
   ]
 
   const playNote = (frequency) => {
@@ -39,8 +39,8 @@ const Navigation = ({ currentSection, onNavigate }) => {
   return (
     <nav className="piano-navigation">
       <div className="piano-brand">
-        <h1>邹静怡</h1>
-        <p>钢琴演奏家</p>
+        <h1>Jingyi Zou</h1>
+        <p>Pianist</p>
       </div>
       <div className="piano-keys">
         {navItems.map((item, index) => (
