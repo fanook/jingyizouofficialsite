@@ -46,28 +46,29 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  align-items: center;
+  gap: 1.2rem; /* 更小的间距 */
   margin-top: 3rem;
   width: 100%;
 }
 
 .platform-card {
   background: var(--secondary-gradient);
-  padding: 2rem;
-  border-radius: 15px;
+  padding: 1rem;
+  border-radius: 10px;
   text-align: center;
   border: 1px solid rgba(16, 185, 129, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
   flex: 0 0 auto;
-  width: 200px; /* 固定宽度 */
+  width: 130px; /* 更紧凑 */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  min-height: 180px; /* 最小高度，防止内容折叠 */
-  position: relative; /* 用于绝对定位的细节信息 */
-  overflow: hidden; /* 隐藏溢出的内容 */
+  justify-content: center;
+  min-height: 100px; /* 更紧凑的高度 */
+  position: relative;
+  overflow: hidden;
 }
 
 .platform-card:hover {
@@ -85,10 +86,10 @@
 }
 
 .platform-icon {
-  font-size: 4rem; /* 图标更大，更突出 */
-  margin-bottom: 0.5rem; /* 减小与标题的间距 */
+  font-size: 2rem; /* 更小的图标 */
+  margin-bottom: 0.5rem;
   color: #ffffff;
-  transition: transform 0.3s ease; /* 添加动画 */
+  transition: transform 0.3s ease;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,10 +101,12 @@
 }
 
 .platform-title {
-  font-size: 1.5rem; /* 标题字体更大 */
+  font-size: 0.95rem; /* 更小的标题字体 */
   color: white;
-  margin-bottom: 1rem;
-  font-weight: 600;
+  margin-bottom: 0;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
 }
 
 /* 详情显示样式 */
@@ -160,24 +163,26 @@
   }
 
   .contact-platforms-grid {
-    flex-direction: column;
+    flex-direction: row; /* 手机端也保持横排 */
+    justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 
   .platform-card {
-    width: 80%;
-    max-width: 300px;
-    padding: 1.5rem;
-    min-height: 150px; /* 减小最小高度 */
+    width: 120px; /* 手机端更紧凑 */
+    max-width: 130px;
+    padding: 0.8rem;
+    min-height: 90px;
   }
 
   .platform-icon {
-    font-size: 3.5rem; /* 手机端图标略小 */
+    font-size: 1.8rem; /* 手机端图标更小 */
   }
 
   .platform-title {
-    font-size: 1.3rem;
+    font-size: 0.85rem;
   }
 
   .platform-value {
