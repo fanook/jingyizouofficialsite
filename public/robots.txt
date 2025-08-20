@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://jingyizou.com/sitemap.xml
+
+# Allow all search engines to crawl all content
+# This is a public portfolio website for pianist Jingyi Zou
+
+# Disallow access to certain file types that shouldn't be indexed
+Disallow: *.json$
+Disallow: *.js$
+Disallow: *.css$
+Disallow: *.ico$
+
+# Crawl delay (optional, helps prevent overwhelming the server)
+Crawl-delay: 1
