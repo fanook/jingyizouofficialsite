@@ -45,8 +45,8 @@
 .video-grid {
   margin-top: 4rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 改为2列布局 */
-  gap: 3rem; /* 增大间距让布局更空旷 */
+  grid-template-columns: repeat(3, 1fr); /* 改为3列布局 */
+  gap: 2rem; /* 调整间距 */
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
@@ -69,7 +69,7 @@
 .video-wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 65%; /* 更高的比例，增加视频高度 */
+  padding-bottom: 56.25%; /* 标准16:9比例，适合3列布局 */
   height: 0;
   background: var(--secondary-gradient);
   border-radius: 10px;
@@ -91,9 +91,9 @@
 }
 
 /* Mobile Responsive */
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .video-grid {
-    grid-template-columns: 1fr; /* 中等屏幕改为1列 */
+    grid-template-columns: repeat(2, 1fr); /* 中等屏幕改为2列 */
     gap: 2rem;
     max-width: 90%;
     padding: 0 1rem;
@@ -101,6 +101,13 @@
 
   .video-item {
     padding: 1.2rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .video-grid {
+    grid-template-columns: 1fr; /* 小屏幕改为1列 */
+    gap: 1.5rem;
   }
 }
 

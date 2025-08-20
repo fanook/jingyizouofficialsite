@@ -1,27 +1,7 @@
-import { useState, useEffect } from 'react'
 import './Home.css'
 import hero2Image from '../assets/images/hero2.jpg'
 
 const Home = () => {
-  const [animatedText, setAnimatedText] = useState('')
-  const [showWelcome, setShowWelcome] = useState(false)
-
-  const welcomeText = 'Welcome to My Musical World'
-
-  useEffect(() => {
-    let index = 0
-    const timer = setInterval(() => {
-      if (index <= welcomeText.length) {
-        setAnimatedText(welcomeText.slice(0, index))
-        index++
-      } else {
-        clearInterval(timer)
-        setTimeout(() => setShowWelcome(true), 500)
-      }
-    }, 100)
-
-    return () => clearInterval(timer)
-  }, [])
 
   return (
     <section className="home-section">
@@ -51,18 +31,27 @@ const Home = () => {
               <span className="title-subtitle">Pianist</span>
             </h1>
 
-            <div className="animated-welcome">
-              <p className="welcome-text">{animatedText}</p>
-            </div>
-
-            <div className={`welcome-content ${showWelcome ? 'show' : ''}`}>
+            <div className="welcome-content">
               <p className="hero-description">
                 Interpreting the soul of music through fingertips, letting every note carry emotion and story.
                 From classical to contemporary, from solo to concerto, I am dedicated to bringing a unique artistic experience to every performance.
               </p>
 
               <div className="upcoming-performances">
-                <a href="https://www.elbphilharmonie.de/en/whats-on/beethoven-orchester-hamburg-zou-jingyi-ulrich-windfuhr/24348" className="performances-link">
+                <a 
+                  href="#performances" 
+                  className="performances-link"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById('performances');
+                    if (element) {
+                      element.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                      });
+                    }
+                  }}
+                >
                   Upcoming Performances
                 </a>
               </div>
