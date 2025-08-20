@@ -7,7 +7,7 @@ const Home = () => {
     <section className="home-section">
       <div className="home-background" style={{ backgroundImage: `url(${hero2Image})` }}>
         <div className="floating-notes">
-          {[...Array(20)].map((_, i) => (
+          {[...Array(8)].map((_, i) => (
             <div
               key={i}
               className="note"
