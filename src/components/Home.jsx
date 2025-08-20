@@ -1,8 +1,8 @@
 import './Home.css'
-import hero2Image from '../assets/images/hero2.jpg'
 
 const Home = () => {
 
+  const hero2Image = "https://i.postimg.cc/jqNjw7XV/hero2.jpg"
   return (
     <section className="home-section">
       <div className="home-background" style={{ backgroundImage: `url(${hero2Image})` }}>
@@ -38,8 +38,8 @@ const Home = () => {
               </p>
 
               <div className="upcoming-performances">
-                <a 
-                  href="#performances" 
+                <a
+                  href="#performances"
                   className="performances-link"
                   onClick={(e) => {
                     e.preventDefault();

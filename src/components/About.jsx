@@ -1,10 +1,8 @@
 import './About.css'
-import hero1Image from '../assets/images/hero1.jpg'
-import hero3Image from '../assets/images/hero3.jpg'
 
 // Single images for each section
-const storyImage = hero1Image;
-const stageImage = hero3Image;
+const storyImage = "https://i.postimg.cc/QxGH0btx/hero1.jpg";
+const stageImage = "https://i.postimg.cc/WzDbXDRZ/hero3.jpg";
 
 const About = () => {
 
