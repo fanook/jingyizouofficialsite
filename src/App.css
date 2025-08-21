@@ -14,8 +14,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #0a0a0a;
-  color: #ffffff;
+  background: var(--pearl-white);
+  color: var(--text-primary);
   line-height: 1.6;
 }
 
@@ -28,7 +28,7 @@ body {
   min-height: 100vh;
   width: 100%;
   position: relative;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+  background: var(--primary-gradient);
 }
 
 .main-content {
@@ -42,17 +42,61 @@ body {
   z-index: 1;
 }
 
-/* Piano-themed color palette */
+/* 珍珠光泽主题 - 温暖亮色系统 */
 :root {
-  --piano-black: #1a1a1a;
-  --piano-white: #ffffff;
-  --piano-ivory: #f8f8f8;
-  --piano-ebony: #2a2a2a;
-  --piano-gold: #d4af37;
-  --piano-silver: #c0c0c0;
-  --primary-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
-  --secondary-gradient: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-  --accent-gradient: linear-gradient(45deg, #d4af37, #b8941f);
+  /* === 基础色彩 === */
+  --pearl-white: #fdfcfb;        /* 珍珠白 */
+  --warm-ivory: #f6f4f1;         /* 温暖象牙白 */
+  --soft-cream: #ede8e0;         /* 柔和奶油色 */
+  --light-gold: #f4f1ea;         /* 淡金色 */
+  --gentle-beige: #f9f6f0;       /* 温柔米色 */
+  
+  /* === 背景渐变 === */
+  --bg-primary-gradient: linear-gradient(135deg, var(--pearl-white) 0%, var(--warm-ivory) 50%, var(--soft-cream) 100%);
+  --bg-secondary-gradient: linear-gradient(145deg, var(--pearl-white), var(--light-gold));
+  --bg-card-gradient: linear-gradient(145deg, var(--pearl-white) 0%, var(--gentle-beige) 100%);
+  --bg-navigation: rgba(253, 252, 251, 0.95);  /* 半透明珍珠白 */
+  
+  /* === 文字颜色 === */
+  --text-primary: #2c3e50;       /* 深蓝灰 */
+  --text-secondary: #5d6d7e;     /* 中等蓝灰 */
+  --text-muted: #85929e;         /* 浅蓝灰 */
+  --text-accent: #34495e;        /* 强调色 */
+  --text-warm: #8b4513;          /* 温暖棕色 */
+  
+  /* === 阴影效果 === */
+  --shadow-soft: 0 2px 8px rgba(44, 62, 80, 0.08);
+  --shadow-medium: 0 4px 16px rgba(44, 62, 80, 0.12);
+  --shadow-strong: 0 8px 24px rgba(44, 62, 80, 0.16);
+  --shadow-glow: 0 0 20px rgba(244, 241, 234, 0.6);
+  
+  /* === 边框颜色 === */
+  --border-light: rgba(44, 62, 80, 0.08);
+  --border-medium: rgba(44, 62, 80, 0.12);
+  --border-warm: rgba(139, 69, 19, 0.15);
+  
+  /* === 交互效果 === */
+  --hover-bg: rgba(244, 241, 234, 0.6);
+  --active-bg: rgba(237, 232, 224, 0.8);
+  --focus-ring: rgba(52, 73, 94, 0.3);
+  
+  /* === 钢琴主题色彩 === */
+  --piano-black: var(--text-primary);
+  --piano-white: var(--pearl-white);
+  --piano-ivory: var(--warm-ivory);
+  --piano-ebony: var(--text-secondary);
+  --piano-gold: var(--text-warm);
+  --piano-silver: var(--text-muted);
+  --piano-white-gradient: linear-gradient(45deg, var(--text-primary), var(--text-accent));
+  
+  /* === 兼容性别名 === */
+  --primary-gradient: var(--bg-primary-gradient);
+  --secondary-gradient: var(--bg-secondary-gradient);
+  --accent-gradient: var(--piano-white-gradient);
+  --bg-primary: var(--pearl-white);
+  --bg-secondary: var(--warm-ivory);
+  --bg-tertiary: var(--light-gold);
+  --shadow-light: var(--shadow-soft);
 }
 
 /* Smooth transitions for all interactive elements */
@@ -82,7 +126,7 @@ button:hover, a:hover {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--piano-black);
+  background: var(--bg-tertiary);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -91,13 +135,13 @@ button:hover, a:hover {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3a3a3a;
+  background: var(--piano-black);
 }
 
 /* Selection styling */
 ::selection {
-  background: rgba(212, 175, 55, 0.3);
-  color: white;
+  background: rgba(30, 41, 59, 0.15);
+  color: var(--text-primary);
 }
 
 /* Focus styles for accessibility */

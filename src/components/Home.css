@@ -1,8 +1,8 @@
 .home-section {
   min-height: 100vh;
   position: relative;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
-  color: white;
+  background: var(--primary-gradient);
+  color: var(--text-primary);
   overflow: hidden;
   padding-top: 80px;
 }
@@ -20,21 +20,7 @@
   background-attachment: fixed;
 }
 
-.home-background::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    transparent 30%, 
-    rgba(0, 0, 0, 0.2) 60%, 
-    rgba(0, 0, 0, 0.4) 80%, 
-    rgba(0, 0, 0, 0.6) 100%);
-  z-index: 1;
-}
+/* 移除背景遮罩，保持图片原始效果 */
 
 .floating-notes {
   position: absolute;
@@ -45,7 +31,7 @@
 
 .note {
   position: absolute;
-  color: rgba(255, 255, 255, 0.05);
+  color: rgba(44, 62, 80, 0.12);
   font-size: 1.5rem;
   animation: float-up linear infinite;
 }
@@ -72,15 +58,15 @@
   .floating-notes {
     display: none;
   }
-  
+
   .note {
     animation: none;
   }
-  
+
   .scroll-indicator {
     animation: none;
   }
-  
+
   .home-background {
     animation: none !important;
     background-position: center center !important;
@@ -118,33 +104,33 @@
 }
 
 .title-line {
-  display: block;
-  font-size: 4rem;
-  font-weight: 300;
-  letter-spacing: 4px;
+  display: inline-block;
+  font-size: 4.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
   margin-bottom: 0.5rem;
-  background: linear-gradient(45deg, #ffffff, #e0e0e0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
   font-family: 'Playfair Display', Georgia, serif;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* 增强阴影 */
-  padding: 0.2rem 0.8rem;
-  background-color: rgba(0, 0, 0, 0.3); /* 给文字加微妙的黑底 */
-  border-radius: 8px;
-  display: inline-block; /* 让背景只包裹文字 */
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(0, 0, 0, 0.5),
+    1px 1px 0px rgba(255, 255, 255, 0.1);
+  -webkit-text-stroke: 0.5px rgba(44, 62, 80, 0.3);
 }
 
 .title-subtitle {
   display: inline-block;
-  font-size: 1.5rem;
-  font-weight: 200;
-  color: #cccccc;
-  letter-spacing: 2px;
-  margin-left: 0.5rem;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
-  padding: 0.1rem 0.6rem;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 6px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #f4f1ea;
+  letter-spacing: 3px;
+  margin-left: 0.8rem;
+  margin-top: 0.8rem;
+  text-shadow: 
+    1px 1px 3px rgba(0, 0, 0, 0.9),
+    0 0 15px rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .welcome-content {
@@ -152,16 +138,20 @@
 }
 
 .hero-description {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #cccccc;
-  margin: 2rem 0;
-  font-weight: 300;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
+  font-size: 1.2rem;
+  line-height: 2;
+  color: #ffffff;
+  margin: 2.5rem 0;
+  font-weight: 400;
+  text-shadow: 
+    1px 1px 3px rgba(0, 0, 0, 0.8),
+    0 0 12px rgba(0, 0, 0, 0.5);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  max-width: 480px;
+  text-align: left;
 }
+
+
 
 .hero-stats {
   display: flex;
@@ -177,14 +167,14 @@
   display: block;
   font-size: 2.5rem;
   font-weight: 200;
-  color: #ffffff;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .stat-label {
   display: block;
   font-size: 0.9rem;
-  color: #aaaaaa;
+  color: var(--text-muted);
   letter-spacing: 1px;
 }
 
@@ -193,22 +183,29 @@
 }
 
 .performances-link {
-  color: #ffffff;
+  color: #f4f1ea;
   text-decoration: none;
-  border-bottom: 1px solid #ffffff;
-  font-weight: 400;
-  letter-spacing: 1px;
+  font-weight: 600;
+  letter-spacing: 2px;
   transition: all 0.3s ease;
-  padding: 0.5rem 1rem;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 6px;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+  text-shadow: 
+    1px 1px 2px rgba(0, 0, 0, 0.9),
+    0 0 10px rgba(0, 0, 0, 0.4);
   display: inline-block;
+  font-size: 1.1rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  text-transform: uppercase;
+  border-bottom: 2px solid rgba(244, 241, 234, 0.6);
+  padding-bottom: 4px;
 }
 
 .performances-link:hover {
-  color: #cccccc;
-  border-bottom-color: #cccccc;
+  color: #ffffff;
+  transform: translateY(-1px);
+  text-shadow: 
+    1px 1px 3px rgba(0, 0, 0, 1),
+    0 0 15px rgba(244, 241, 234, 0.8);
+  border-bottom-color: rgba(255, 255, 255, 0.9);
 }
 
 .performances-link:focus {
@@ -299,12 +296,12 @@
 
 .scroll-arrow {
   font-size: 1.5rem;
-  color: #cccccc;
+  color: var(--text-secondary);
 }
 
 .scroll-indicator p {
   font-size: 0.9rem;
-  color: #aaaaaa;
+  color: var(--text-muted);
   margin: 0;
 }
 
@@ -356,13 +353,7 @@
     }
   }
 
-  /* 移动端渐变遮罩调整 */
-  .home-background::after {
-    background: linear-gradient(180deg, 
-      rgba(0, 0, 0, 0.1) 0%, 
-      rgba(0, 0, 0, 0.3) 50%, 
-      rgba(0, 0, 0, 0.6) 100%); /* 垂直渐变，更适合移动端 */
-  }
+  /* 移动端也移除渐变遮罩 */
 
   .hero-section {
     justify-content: center;
@@ -375,7 +366,8 @@
   }
 
   .title-line {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    letter-spacing: 1px;
   }
 
   .welcome-text {
@@ -398,18 +390,24 @@
   }
 
   .title-line {
-    font-size: 2rem;
-    padding: 0.15rem 0.6rem;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
   }
 
   .title-subtitle {
-    font-size: 1.2rem;
-    padding: 0.1rem 0.5rem;
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    letter-spacing: 2px;
   }
 
-
   .hero-description {
-    font-size: 0.95rem;
-    padding: 0.8rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 100%;
+  }
+
+  .performances-link {
+    font-size: 1rem;
+    letter-spacing: 1px;
   }
 }

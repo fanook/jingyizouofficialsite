@@ -48,7 +48,14 @@ const Performances = () => {
             <div key={performance.id} className="performance-item">
               <div className="performance-header">
                 <h3 className="performance-title">{performance.title}</h3>
-                {performance.link && (
+              </div>
+              
+              {performance.description && (
+                <p className="performance-description">{performance.description}</p>
+              )}
+              
+              {performance.link && (
+                <div className="performance-footer">
                   <a 
                     href={performance.link} 
                     target="_blank" 
@@ -60,11 +67,7 @@ const Performances = () => {
                       <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </a>
-                )}
-              </div>
-              
-              {performance.description && (
-                <p className="performance-description">{performance.description}</p>
+                </div>
               )}
             </div>
           ))}
