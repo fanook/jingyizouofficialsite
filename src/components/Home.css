@@ -104,33 +104,34 @@
 }
 
 .title-line {
-  display: inline-block;
-  font-size: 4.2rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 0.5rem;
+  display: block;
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: 4px;
+  margin-bottom: 1rem;
   color: #ffffff;
   font-family: 'Playfair Display', Georgia, serif;
-  text-shadow: 
-    2px 2px 4px rgba(0, 0, 0, 0.8),
-    0 0 20px rgba(0, 0, 0, 0.5),
-    1px 1px 0px rgba(255, 255, 255, 0.1);
-  -webkit-text-stroke: 0.5px rgba(44, 62, 80, 0.3);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  white-space: nowrap;
 }
 
 .title-subtitle {
   display: inline-block;
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-weight: 500;
-  color: #f4f1ea;
+  color: rgba(255, 255, 255, 0.95);
   letter-spacing: 3px;
-  margin-left: 0.8rem;
-  margin-top: 0.8rem;
-  text-shadow: 
-    1px 1px 3px rgba(0, 0, 0, 0.9),
-    0 0 15px rgba(0, 0, 0, 0.4);
+  margin-top: 0.5rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   text-transform: uppercase;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 20px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
 }
 
 .welcome-content {
@@ -138,17 +139,19 @@
 }
 
 .hero-description {
-  font-size: 1.2rem;
-  line-height: 2;
-  color: #ffffff;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.95);
   margin: 2.5rem 0;
   font-weight: 400;
-  text-shadow: 
-    1px 1px 3px rgba(0, 0, 0, 0.8),
-    0 0 12px rgba(0, 0, 0, 0.5);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  max-width: 480px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  font-family: 'Georgia', 'Times New Roman', serif;
+  max-width: 600px;
   text-align: left;
+  backdrop-filter: blur(1px);
+  letter-spacing: 0.3px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 
@@ -183,28 +186,24 @@
 }
 
 .performances-link {
-  color: #f4f1ea;
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 2px;
   transition: all 0.3s ease;
-  text-shadow: 
-    1px 1px 2px rgba(0, 0, 0, 0.9),
-    0 0 10px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   display: inline-block;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   text-transform: uppercase;
-  border-bottom: 2px solid rgba(244, 241, 234, 0.6);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
   padding-bottom: 4px;
 }
 
 .performances-link:hover {
   color: #ffffff;
   transform: translateY(-1px);
-  text-shadow: 
-    1px 1px 3px rgba(0, 0, 0, 1),
-    0 0 15px rgba(244, 241, 234, 0.8);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   border-bottom-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -367,7 +366,7 @@
 
   .title-line {
     font-size: 2.8rem;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
   }
 
   .welcome-text {
@@ -391,18 +390,19 @@
 
   .title-line {
     font-size: 2.2rem;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
   }
 
   .title-subtitle {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
     margin-top: 0.5rem;
     letter-spacing: 2px;
+    padding: 6px 16px;
   }
 
   .hero-description {
     font-size: 1.1rem;
-    line-height: 1.8;
+    line-height: 1.7;
     max-width: 100%;
   }
 

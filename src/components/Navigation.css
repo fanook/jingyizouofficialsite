@@ -39,6 +39,19 @@
   border-bottom: 1px solid var(--border-light);
 }
 
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.piano-logo {
+  width: 24px;
+  height: 24px;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
 .piano-brand h1 {
   color: var(--text-primary);
   font-size: 1.7rem;
@@ -84,7 +97,7 @@
 
 .key-label {
   color: var(--text-primary);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
   white-space: nowrap;
   transition: all 0.3s ease;

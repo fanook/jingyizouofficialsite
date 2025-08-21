@@ -1,0 +1,64 @@
+/* Footer - 网站作者信息 */
+
+.site-footer {
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  padding: 1.5rem 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.footer-piano-icon {
+  width: 16px;
+  height: 16px;
+  color: #6c757d;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+.footer-piano-icon:hover {
+  opacity: 1;
+}
+
+.footer-text {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin: 0;
+  font-weight: 400;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.footer-link {
+  color: #495057;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #212529;
+  text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 1rem 0;
+  }
+  
+  .footer-content {
+    padding: 0 1rem;
+  }
+  
+  .footer-text {
+    font-size: 0.8rem;
+  }
+}

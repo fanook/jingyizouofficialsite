@@ -41,7 +41,7 @@ const Navigation = ({ currentSection, onNavigate }) => {
     <nav className="piano-navigation">
       <div className="piano-brand">
         <h1>Jingyi Zou</h1>
-        <p>Pianist</p>
+        <p>PIANIST</p>
       </div>
       <div className="piano-keys">
         {navItems.map((item, index) => (

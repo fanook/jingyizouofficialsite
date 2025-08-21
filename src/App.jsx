@@ -6,6 +6,7 @@ import About from './components/About'
 import Performances from './components/Performances'
 import Portfolio from './components/Portfolio'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 function App() {
   const [currentSection, setCurrentSection] = useState('home')
@@ -81,6 +82,7 @@ function App() {
           <Contact />
         </section>
       </main>
+      <Footer />
     </div>
   )
 }

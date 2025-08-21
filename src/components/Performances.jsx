@@ -4,32 +4,37 @@ import './Performances.css'
 const PERFORMANCES_DATA = [
   {
     id: 1,
-    title: "September 27, 2025 - Sillian Cultural and Arts Center",
-    description: "New Munich Philharmonic Orchestra, Austria, Germany. Conductor: Fuad Ibrahimov. Beethoven Piano Concerto No.1 in C Major",
+    date: "Sep 27",
+    title: "Sillian Cultural and Arts Center, Austria",
+    description: "New Munich Philharmonic Orchestra. Conductor: Fuad Ibrahimov. Beethoven Piano Concerto No.1 in C Major",
     link: "https://www.marktgemeinde-sillian.at/herzlich-willkommen/veranstaltungen/"
   },
   {
     id: 2,
-    title: "September 28, 2025 - Wolfratshausen Theatre and Cultural Center",
-    description: "New Munich Philharmonic Orchestra, Wolfratshausen, Germany. Conductor: Fuad Ibrahimov. Beethoven Piano Concerto No.1 in C Major",
+    date: "Sep 28", 
+    title: "Wolfratshausen Theatre and Cultural Center, Germany",
+    description: "New Munich Philharmonic Orchestra. Conductor: Fuad Ibrahimov. Beethoven Piano Concerto No.1 in C Major",
     link: "https://themunicheye.com/events/neue-philharmonie-munchen-ibrahimov--jingyi-zou--prokofiev-beethoven-brahms-7533"
   },
   {
     id: 3,
-    title: "September 29, 2025 - Hercules Hall, Munich Residence",
-    description: "New Munich Philharmonic Orchestra, Munich, Germany. Conductor: Fuad Ibrahimov. Beethoven Piano Concerto No.1 in C Major",
+    date: "Sep 29",
+    title: "Hercules Hall, Munich Residence, Germany", 
+    description: "New Munich Philharmonic Orchestra. Conductor: Fuad Ibrahimov. Beethoven Piano Concerto No.1 in C Major",
     link: "https://www.muenchenticket.de/event/neue-philharmonie-muenchen-benefizkonzert-fuer-kolibri-interkulturelle-stiftung-33587/"
   },
   {
     id: 4,
-    title: "October 19, 2025 - Isarhalle",
-    description: "Hamburg Beethoven Philharmonic Orchestra, Hamburg, Germany. Conductor: Ulrich Windfuhr. Beethoven Piano Concerto No.1 in C Major",
+    date: "Oct 19",
+    title: "Isarhalle, Hamburg, Germany", 
+    description: "Hamburg Beethoven Philharmonic Orchestra. Conductor: Ulrich Windfuhr. Beethoven Piano Concerto No.1 in C Major",
     link: null
   },
   {
     id: 5,
-    title: "December 15, 2025 - Mozart Foundation Philharmonic Hall",
-    description: "Salzburg Chamber Soloists, Salzburg, Austria. Conductor: Franz Nielsen. Mozart Piano Concerto No. 20 in D minor, K. 466",
+    date: "Dec 15",
+    title: "Mozart Foundation Philharmonic Hall, Salzburg, Austria",
+    description: "Salzburg Chamber Soloists. Conductor: Franz Nielsen. Mozart Piano Concerto No. 20 in D minor, K. 466",
     link: null
   }
 ]
@@ -48,7 +53,9 @@ const Performances = () => {
             <div key={performance.id} className="performance-item">
               <div className="performance-header">
                 <h3 className="performance-title">{performance.title}</h3>
+                <div className="performance-date">{performance.date}</div>
               </div>
+              
               
               {performance.description && (
                 <p className="performance-description">{performance.description}</p>

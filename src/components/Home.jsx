@@ -2,7 +2,7 @@ import './Home.css'
 
 const Home = () => {
 
-  const hero2Image = "https://i.postimg.cc/jqNjw7XV/hero2.jpg"
+  const hero2Image = "https://assets.jingyizou.com/hero_main.jpg"
   return (
     <section className="home-section">
       <div className="home-background" style={{ backgroundImage: `url(${hero2Image})` }}>
