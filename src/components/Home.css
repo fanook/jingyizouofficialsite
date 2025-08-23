@@ -342,7 +342,7 @@
   }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media (max-width: 1300px) {
   /* 移动端背景图优化 - 从左到右播放动画 */
   .home-background {
     background-attachment: scroll; /* 移除fixed，改善移动端性能 */
