@@ -33,7 +33,9 @@
   color: #6c757d;
   margin: 0;
   font-weight: 400;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  letter-spacing: 0.5px;
 }
 
 .footer-link {
@@ -41,6 +43,8 @@
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
+  font-family: 'Playfair Display', Georgia, serif;
+  letter-spacing: 0.3px;
 }
 
 .footer-link:hover {

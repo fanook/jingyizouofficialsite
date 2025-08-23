@@ -76,16 +76,11 @@ const Contact = () => {
     // 可以添加更多平台
   ];
 
-  const [activeContact, setActiveContact] = useState(null);
-
   const handleIconClick = (platformId, link) => {
     if (platformId === 'email') {
-      // 邮箱直接打开邮件客户端，不切换显示状态
       window.location.href = `mailto:${CONTACT_INFO.EMAIL}`;
     } else if (link) {
       window.open(link, '_blank');
-    } else {
-      setActiveContact(platformId === activeContact ? null : platformId);
     }
   };
 
@@ -101,21 +96,10 @@ const Contact = () => {
             {contactPlatforms.map((platform) => (
                 <div
                     key={platform.id}
-                    className={`platform-card ${platform.id === 'email' ? 'email-card' : ''} ${activeContact === platform.id ? 'active' : ''}`}
+                    className="platform-card"
                     onClick={() => handleIconClick(platform.id, platform.link)}
                 >
                   <div className="platform-icon">{platform.icon}</div>
-                  <h3 className="platform-title">{platform.title}</h3>
-                  {platform.id === 'email' ? (
-                    <div className="email-hover-details">
-                      <p className="platform-value">{platform.value}</p>
-                    </div>
-                  ) : activeContact === platform.id && (
-                      <div className="platform-details">
-                        <p className="platform-value">{platform.value}</p>
-                        {/* <p className="platform-description">{platform.description}</p> */}
-                      </div>
-                  )}
                 </div>
             ))}
           </div>

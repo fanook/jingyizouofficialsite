@@ -37,53 +37,46 @@
 }
 
 .contact-platforms-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
   margin-top: 3rem;
   width: 100%;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .platform-card {
-  background: rgba(255, 255, 255, 0.4);
-  padding: 2rem 1.5rem;
-  border-radius: 16px;
+  background: transparent;
+  padding: 1.5rem;
+  border-radius: 50%;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
   cursor: pointer;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 8px 24px rgba(44, 62, 80, 0.08);
+  width: 80px;
+  height: 80px;
 }
 
 .platform-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(44, 62, 80, 0.15);
-  background: rgba(255, 255, 255, 0.5);
-  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px) scale(1.1);
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .platform-icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
   color: var(--text-primary);
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .platform-card:hover .platform-icon {
-  color: var(--text-accent);
+  color: var(--text-primary);
   transform: scale(1.1);
 }
 
@@ -193,19 +186,19 @@
   }
 
   .contact-platforms-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 3rem;
     max-width: 400px;
   }
 
   .platform-card {
-    padding: 1.5rem 1rem;
-    border-radius: 12px;
+    width: 70px;
+    height: 70px;
+    padding: 1rem;
   }
 
   .platform-icon {
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
+    width: 35px;
+    height: 35px;
   }
 
   .platform-title {
