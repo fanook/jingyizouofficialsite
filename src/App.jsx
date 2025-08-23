@@ -79,7 +79,7 @@ function App() {
           <Performances config={config?.performances} />
         </section>
         <section id="portfolio">
-          <Portfolio />
+          <Portfolio config={config?.portfolio} />
         </section>
         <section id="contact">
           <Contact config={config?.contact} />

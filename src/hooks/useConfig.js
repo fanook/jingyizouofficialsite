@@ -88,6 +88,17 @@ const DEFAULT_CONFIG = {
       ]
     }
   },
+  portfolio: {
+    content: {
+      title: "Portfolio",
+      subtitle: "Listen to My Musical World",
+      youtubeVideoIds: [
+        'Y8mcSNUDnS8',
+        'YsrYc5a7PlM', 
+        'Un6tKoUtdFw'
+      ]
+    }
+  },
   contact: {
     content: {
       title: "Contact",
