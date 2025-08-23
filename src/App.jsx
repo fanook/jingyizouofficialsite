@@ -7,9 +7,11 @@ import Performances from './components/Performances'
 import Portfolio from './components/Portfolio'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import useConfig from './hooks/useConfig'
 
 function App() {
   const [currentSection, setCurrentSection] = useState('home')
+  const config = useConfig()
 
   // Handle navigation - scroll to section
   const handleNavigate = (sectionId) => {
@@ -64,22 +66,23 @@ function App() {
       <Navigation
         currentSection={currentSection}
         onNavigate={handleNavigate}
+        config={config?.navigation}
       />
       <main className="main-content">
         <section id="home">
-          <Home />
+          <Home config={config?.home} />
         </section>
         <section id="about">
-          <About />
+          <About config={config?.about} />
         </section>
         <section id="performances">
-          <Performances />
+          <Performances config={config?.performances} />
         </section>
         <section id="portfolio">
           <Portfolio />
         </section>
         <section id="contact">
-          <Contact />
+          <Contact config={config?.contact} />
         </section>
       </main>
       <Footer />

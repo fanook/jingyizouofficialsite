@@ -153,6 +153,21 @@ textarea:focus {
   outline-offset: 2px;
 }
 
+/* Loading and error states */
+.loading, .error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.error {
+  color: #ff6b6b;
+}
+
 /* Common section styling */
 .section {
   min-height: 100vh;

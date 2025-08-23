@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Navigation.css'
 
-const Navigation = ({ currentSection, onNavigate }) => {
+const Navigation = ({ currentSection, onNavigate, config }) => {
   const [hoveredKey, setHoveredKey] = useState(null)
 
   const navItems = [
@@ -40,8 +40,8 @@ const Navigation = ({ currentSection, onNavigate }) => {
   return (
     <nav className="piano-navigation">
       <div className="piano-brand">
-        <h1>Jingyi Zou</h1>
-        <p>PIANIST</p>
+        <h1>{config?.title || 'Jingyi Zou'}</h1>
+        <p>{config?.subtitle || 'PIANIST'}</p>
       </div>
       <div className="piano-keys">
         {navItems.map((item, index) => (

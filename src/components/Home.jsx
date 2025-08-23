@@ -1,11 +1,10 @@
 import './Home.css'
 
-const Home = () => {
-
-  const hero2Image = "https://assets.jingyizou.com/hero_main.jpg"
+const Home = ({ config }) => {
+  if (!config) return <div style={{ minHeight: '100vh', background: 'var(--deep-black)' }}></div>
   return (
     <section className="home-section">
-      <div className="home-background" style={{ backgroundImage: `url(${hero2Image})` }}>
+      <div className="home-background" style={{ backgroundImage: `url(${config.images.hero})` }}>
         <div className="floating-notes">
           {[...Array(8)].map((_, i) => (
             <div
@@ -27,14 +26,13 @@ const Home = () => {
         <div className="hero-section">
           <div className="hero-text">
             <h1 className="main-title">
-              <span className="title-line">Jingyi Zou</span>
-              <span className="title-subtitle">Pianist</span>
+              <span className="title-line">{config.content.title}</span>
+              <span className="title-subtitle">{config.content.subtitle}</span>
             </h1>
 
             <div className="welcome-content">
               <p className="hero-description">
-                Interpreting the soul of music through fingertips, letting every note carry emotion and story.
-                From classical to contemporary, from solo to concerto, I am dedicated to bringing a unique artistic experience to every performance.
+                {config.content.description}
               </p>
 
               <div className="upcoming-performances">
@@ -52,7 +50,7 @@ const Home = () => {
                     }
                   }}
                 >
-                  Upcoming Performances
+                  {config.content.buttons.performances}
                 </a>
               </div>
             </div>
@@ -74,7 +72,7 @@ const Home = () => {
           style={{ cursor: 'pointer' }}
         >
           <div className="scroll-arrow">↓</div>
-          <p>Explore My Musical Journey</p>
+          <p>{config.content.buttons.explore}</p>
         </div>
       </div>
     </section>

@@ -1,19 +1,8 @@
-import { useState } from 'react'
 import './Contact.css'
 
-// 联系方式常量配置 - 方便修改
-const CONTACT_INFO = {
-  EMAIL: 'zoujingyijane@gmail.com',
-  XIAOHONGSHU: '@jingyizou_piano',
-  XIAOHONGSHU_LINK: 'https://www.xiaohongshu.com/user/profile/6870d308000000001e008a66?xsec_token=YBS9dsKrp0rTVIvpzEPb5zwByFlCGeVnYH2CopkCAbnvw=&xsec_source=app_share&xhsshare=CopyLink&appuid=6870d308000000001e008a66&apptime=1755591668&share_id=bb2a23441e314f23b586ae8a6469b337',
-  YOUTUBE: 'youtube.com/@jingyizou6086',
-  YOUTUBE_LINK: 'https://www.youtube.com/@jingyizou6086',
-  INSTAGRAM: '@jingyizou.piano',
-  INSTAGRAM_LINK: 'https://www.instagram.com/jingyizou_piano_/profilecard/?igsh=MXBzbzVuOGNnYTlnag=='
-}
-
-const Contact = () => {
-  // 定义联系方式数据
+const Contact = ({ config }) => {
+  if (!config) return <div style={{ minHeight: '100vh', background: 'var(--deep-black)' }}></div>
+  // 定义联系方式数据和图标
   const contactPlatforms = [
     {
       id: 'email',
@@ -23,9 +12,7 @@ const Contact = () => {
           <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2" fill="none"/>
         </svg>
       ),
-      title: 'Email',
-      value: CONTACT_INFO.EMAIL,
-      description: 'General inquiries and collaboration'
+      value: config.content.email
     },
     {
       id: 'xiaohongshu',
@@ -38,10 +25,8 @@ const Contact = () => {
           <path d="M805.521 493.878h39.723v-52.01h-40.132z" fill="currentColor"/>
         </svg>
       ),
-      title: 'Xiaohongshu',
-      value: CONTACT_INFO.XIAOHONGSHU,
-      description: '关注我的日常音乐分享',
-      link: CONTACT_INFO.XIAOHONGSHU_LINK
+      value: config.content.xiaohongshu,
+      link: config.content.xiaohongShuLink
     },
     {
       id: 'youtube',
@@ -53,10 +38,8 @@ const Contact = () => {
             <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="currentColor"/>
           </svg>
       ),
-      title: 'YouTube',
-      value: CONTACT_INFO.YOUTUBE,
-      description: 'Watch my performance videos',
-      link: CONTACT_INFO.YOUTUBE_LINK
+      value: config.content.youtube,
+      link: config.content.youtubeLink
     },
     {
       id: 'instagram',
@@ -68,17 +51,14 @@ const Contact = () => {
             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
           </svg>
       ),
-      title: 'Instagram',
-      value: CONTACT_INFO.INSTAGRAM,
-      description: 'Follow my musical journey',
-      link: CONTACT_INFO.INSTAGRAM_LINK
+      value: config.content.instagram,
+      link: config.content.instagramLink
     }
-    // 可以添加更多平台
   ];
 
   const handleIconClick = (platformId, link) => {
     if (platformId === 'email') {
-      window.location.href = `mailto:${CONTACT_INFO.EMAIL}`;
+      window.location.href = `mailto:${config.content.email}`;
     } else if (link) {
       window.open(link, '_blank');
     }
@@ -88,8 +68,8 @@ const Contact = () => {
       <section className="contact-section">
         <div className="container">
           <div className="contact-header">
-            <h2 className="section-title">Contact</h2>
-            <p className="section-subtitle">Let's Connect Through Music</p>
+            <h2 className="section-title">{config.content.title}</h2>
+            <p className="section-subtitle">{config.content.subtitle}</p>
           </div>
 
           <div className="contact-platforms-grid">
