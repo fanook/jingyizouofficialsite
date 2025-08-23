@@ -104,11 +104,8 @@ const DEFAULT_CONFIG = {
       title: "Contact",
       subtitle: "Let's Connect Through Music",
       email: "zoujingyijane@gmail.com",
-      xiaohongshu: "@jingyizou_piano",
       xiaohongShuLink: "https://www.xiaohongshu.com/user/profile/6870d308000000001e008a66?xsec_token=YBS9dsKrp0rTVIvpzEPb5zwByFlCGeVnYH2CopkCAbnvw=&xsec_source=app_share&xhsshare=CopyLink&appuid=6870d308000000001e008a66&apptime=1755591668&share_id=bb2a23441e314f23b586ae8a6469b337",
-      youtube: "youtube.com/@jingyizou6086",
       youtubeLink: "https://www.youtube.com/@jingyizou6086",
-      instagram: "@jingyizou.piano",
       instagramLink: "https://www.instagram.com/jingyizou_piano_/profilecard/?igsh=MXBzbzVuOGNnYTlnag=="
     }
   }

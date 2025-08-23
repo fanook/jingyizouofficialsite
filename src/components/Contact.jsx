@@ -11,8 +11,7 @@ const Contact = ({ config }) => {
           <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" fill="none"/>
           <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2" fill="none"/>
         </svg>
-      ),
-      value: config.content.email
+      )
     },
     {
       id: 'xiaohongshu',
@@ -25,7 +24,6 @@ const Contact = ({ config }) => {
           <path d="M805.521 493.878h39.723v-52.01h-40.132z" fill="currentColor"/>
         </svg>
       ),
-      value: config.content.xiaohongshu,
       link: config.content.xiaohongShuLink
     },
     {
@@ -38,7 +36,6 @@ const Contact = ({ config }) => {
             <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="currentColor"/>
           </svg>
       ),
-      value: config.content.youtube,
       link: config.content.youtubeLink
     },
     {
@@ -51,7 +48,6 @@ const Contact = ({ config }) => {
             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
           </svg>
       ),
-      value: config.content.instagram,
       link: config.content.instagramLink
     }
   ];
