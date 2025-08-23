@@ -50,15 +50,15 @@
   align-items: center;
 }
 
-.about-section-block:nth-child(even) {
+.about-section-block:nth-child(3) {
   grid-template-columns: 1fr 1fr;
 }
 
-.about-section-block:nth-child(even) .content-left {
+.about-section-block:nth-child(3) .content-left {
   order: 2;
 }
 
-.about-section-block:nth-child(even) .content-right {
+.about-section-block:nth-child(3) .content-right {
   order: 1;
 }
 
@@ -158,25 +158,18 @@
   transform: scale(1.02);
 }
 
-/* 创意分割线 */
-.about-section-block::before {
-  content: '';
-  position: absolute;
-  top: -4rem;
-  left: -100px;
-  right: -100px;
+/* 分割线样式 */
+.section-separator {
+  width: 60%;
   height: 1px;
+  margin: 4rem auto;
   background: linear-gradient(90deg, 
     transparent 0%, 
-    rgba(44, 62, 80, 0.1) 20%, 
-    rgba(44, 62, 80, 0.2) 50%, 
-    rgba(44, 62, 80, 0.1) 80%, 
+    rgba(255, 255, 255, 0.15) 20%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    rgba(255, 255, 255, 0.15) 80%, 
     transparent 100%);
-  z-index: 0;
-}
 
-.about-section-block:first-child::before {
-  display: none;
 }
 
 /* Mobile Responsive */

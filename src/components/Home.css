@@ -139,17 +139,17 @@
 }
 
 .hero-description {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.95);
   margin: 2.5rem 0;
   font-weight: 400;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-  font-family: 'Georgia', 'Times New Roman', serif;
+  font-family: Georgia, 'Times New Roman', serif;
   max-width: 600px;
   text-align: left;
   backdrop-filter: blur(1px);
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
   word-break: keep-all;
   overflow-wrap: break-word;
 }

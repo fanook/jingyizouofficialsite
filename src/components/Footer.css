@@ -1,8 +1,8 @@
 /* Footer - 网站作者信息 */
 
 .site-footer {
-  background: #f8f9fa;
-  border-top: 1px solid #e9ecef;
+  background: var(--charcoal);
+  border-top: 1px solid var(--border-light);
   padding: 1.5rem 0;
 }
 
@@ -16,7 +16,7 @@
 .footer-piano-icon {
   width: 16px;
   height: 16px;
-  color: #6c757d;
+  color: var(--text-muted);
   opacity: 0.7;
   transition: opacity 0.3s ease;
   display: inline-block;
@@ -30,7 +30,7 @@
 
 .footer-text {
   font-size: 0.85rem;
-  color: #6c757d;
+  color: var(--text-muted);
   margin: 0;
   font-weight: 400;
   font-family: 'Playfair Display', Georgia, serif;
@@ -39,7 +39,7 @@
 }
 
 .footer-link {
-  color: #495057;
+  color: var(--text-secondary);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -48,7 +48,7 @@
 }
 
 .footer-link:hover {
-  color: #212529;
+  color: var(--text-primary);
   text-decoration: underline;
 }
 

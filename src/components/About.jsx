@@ -34,6 +34,9 @@ const About = () => {
           </div>
         </div>
 
+        {/* 分割线 */}
+        <div className="section-separator"></div>
+
         {/* Performance Experience Section */}
         <div className="about-section-block">
           <div className="section-title-mobile">

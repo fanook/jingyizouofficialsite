@@ -60,7 +60,19 @@ const Home = () => {
 
         </div>
 
-        <div className="scroll-indicator">
+        <div 
+          className="scroll-indicator"
+          onClick={() => {
+            const element = document.getElementById('about');
+            if (element) {
+              element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          }}
+          style={{ cursor: 'pointer' }}
+        >
           <div className="scroll-arrow">↓</div>
           <p>Explore My Musical Journey</p>
         </div>
