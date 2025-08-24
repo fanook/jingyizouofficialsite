@@ -187,6 +187,7 @@
   .contact-platforms-grid {
     gap: 3rem;
     max-width: 400px;
+    margin: 3rem auto 0; /* 居中显示 */
   }
 
   .platform-card {
@@ -216,9 +217,12 @@
   }
 
   .contact-platforms-grid {
-    grid-template-columns: 1fr;
+    flex-direction: row; /* 保持水平排列 */
+    flex-wrap: wrap; /* 允许换行 */
     gap: 1.5rem;
-    max-width: 280px;
+    max-width: 100%;
+    margin: 3rem auto 0; /* 居中显示 */
+    justify-content: center; /* 确保居中 */
   }
 
   .platform-card {

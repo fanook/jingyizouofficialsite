@@ -332,36 +332,38 @@
 /* 移动端背景图从左到右播放动画 */
 @keyframes backgroundPan {
   0% {
-    background-position: 0% center; /* 开始位置：最左边 */
+    background-position: 20% center; /* 开始位置：稍微右移避免边界空白 */
   }
   50% {
-    background-position: 100% center; /* 中间位置：最右边 */
+    background-position: 80% center; /* 中间位置：稍微左移避免边界空白 */
   }
   100% {
-    background-position: 0% center; /* 结束位置：回到最左边 */
+    background-position: 20% center; /* 结束位置：回到开始位置 */
+  }
+}
+
+
+@media (max-width: 1300px) {
+  /* 任何宽度小于1300px的设备，都使用从左到右的水平移动动画 */
+  .home-background {
+    background-attachment: scroll; /* 移除fixed，改善移动端性能 */
+    background-size: cover; /* 使用cover确保完全覆盖，可能会裁剪但不会有空白 */
+    background-position: 20% center; /* 从20%位置开始，与动画同步 */
+    background-repeat: no-repeat;
+    animation: backgroundPan 25s ease-in-out infinite; /* 从左到右循环播放 */
+  }
+}
+
+/* 如果用户偏好减少动画，则暂停背景动画 */
+@media (max-width: 1300px) and (prefers-reduced-motion: reduce) {
+  .home-background {
+    animation: none !important;
+    background-position: center center !important; /* 回到静态居中位置 */
   }
 }
 
 @media (max-width: 1300px) {
-  /* 移动端背景图优化 - 从左到右播放动画 */
-  .home-background {
-    background-attachment: scroll; /* 移除fixed，改善移动端性能 */
-    background-size: auto 100%; /* 改为自适应宽度，保持高度100% */
-    background-position: 0% center; /* 从左侧开始 */
-    background-repeat: no-repeat;
-    animation: backgroundPan 25s ease-in-out infinite; /* 从左到右循环播放，调慢速度 */
-  }
-
-  /* 如果用户偏好减少动画，则暂停背景动画 */
-  @media (prefers-reduced-motion: reduce) {
-    .home-background {
-      animation: none;
-      background-position: center center; /* 回到静态居中位置 */
-    }
-  }
-
-  /* 移动端也移除渐变遮罩 */
-
+  /* 移动端通用样式 */
   .hero-section {
     justify-content: center;
     padding-right: 1rem;
@@ -389,9 +391,11 @@
 /* 超小屏幕优化 */
 @media (max-width: 480px) {
   .home-background {
-    animation-duration: 20s; /* 小屏幕也调慢一点 */
+    animation-duration: 20s; /* 小屏幕动画调快一点 */
   }
+}
 
+@media (max-width: 480px) {
   .hero-text {
     padding: 1.5rem;
   }
